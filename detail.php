@@ -1,4 +1,15 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KanagaHill</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+  <?php
 include 'lib/koneksi.php';
 
 $id_pemesanan = htmlentities($_GET['id_pemesanan']);
@@ -14,7 +25,7 @@ if(mysqli_num_rows($query)==0)
     $detail = mysqli_fetch_row($query);
 ?>
 
-<main class="flex-shrink-0">
+<main class="flex-shrink-0 d-flex py-5">
   <div class="container">
     <form method="post" action="lib/proses.php">
 <div class="card mt-2">
@@ -72,12 +83,16 @@ if(mysqli_num_rows($query)==0)
 	</div>
 	<div class="mb-3">
 	  <label for="created_at" class="form-label">Waktu Pemesanan</label>
-	  <div id="created_at"><?=$detail[10]?></div>
+	  <div id="created_at"><?=$detail[11]?></div>
 	</div>
   </div>
   <div class="card-footer d-print-none">
-    <a href="index.php?aksi=pesan" class="btn btn-primary">Buat Pesanan Baru</a>
+    <a href="pemesanan.php" class="btn btn-primary">Buat Pesanan Baru</a>
 	<a href="#" onclick="window.print()" class="btn btn-success">Cetak</a>
   </div>
 </div>
 <?php } ?>
+
+  
+</body>
+</html>
