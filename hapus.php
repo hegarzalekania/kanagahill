@@ -16,8 +16,8 @@ if(mysqli_num_rows($query)==0)
     //var_dump($sql_hapus); exit;
     if($query_hapus)
     {
-        header('Location: index.php?aksi=daftar');
+        header('Location: daftar.php');
     }else{
-        header('Location: index.php?aksi=detail&id_pemesanan='.$id_pemesanan);
+        header('Location: daftar.php');
     }
 }
